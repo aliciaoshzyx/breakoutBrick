@@ -10,29 +10,11 @@ void Application::InitVariables(void)
 
 	m_pLightMngr->SetPosition(vector3(0.0f, 3.0f, 13.0f), 1); //set the position of first light (0 is reserved for ambient light)
 
-#ifdef DEBUG
-	uint uInstances = 900;
-#else
-	uint uInstances = 1849;
-#endif
-	int nSquare = static_cast<int>(std::sqrt(uInstances));
-	m_uObjects = nSquare * nSquare;
-	uint uIndex = -1;
-	for (int i = 0; i < nSquare; i++)
-	{
-		for (int j = 0; j < nSquare; j++)
-		{
-			uIndex++;
-			m_pEntityMngr->AddEntity("Minecraft\\Cube.obj");
-			vector3 v3Position = vector3(glm::sphericalRand(34.0f));
-			matrix4 m4Position = glm::translate(v3Position);
-			m_pEntityMngr->SetModelMatrix(m4Position);
-		}
-	}
-	m_uOctantLevels = 3;
-	m_pEntityMngr->Update();
-	m_pRoot = new MyOctree(m_uOctantLevels, 5); //getentitycount read access violation???
+	//m_uOctantLevels = 3;
+	//m_pEntityMngr->Update();
+	//m_pRoot = new MyOctree(m_uOctantLevels, 5); //getentitycount read access violation???
 
+	m_pMeshMngr->GenerateCylinder(2.f, 30.f, 10, C_BLUE);
 }
 void Application::Update(void)
 {
@@ -45,14 +27,17 @@ void Application::Update(void)
 	//Is the first person camera active?
 	CameraRotation();
 	
-	//Update Entity Manager
-	m_pEntityMngr->Update();
+	////Update Entity Manager
+	//m_pEntityMngr->Update();
+	//m_pRoot->Display(m_uOctantID, C_YELLOW);
 
-	m_pRoot->Display(m_uOctantID, C_YELLOW);
+	////Add objects to render list
+	//m_pEntityMngr->AddEntityToRenderList(-1, true);
 
-	//Add objects to render list
-	m_pEntityMngr->AddEntityToRenderList(-1, true);
-
+	matrix4 model;
+	matrix4 rotation = glm::rotate(IDENTITY_M4, glm::radians(90.f), AXIS_Z);
+	model = rotation * glm::translate(IDENTITY_M4, vector3(-40.f, m_playerMovement, 0.f));
+	m_pMeshMngr->AddCylinderToRenderList(model, C_BLUE);
 
 }
 void Application::Display(void)

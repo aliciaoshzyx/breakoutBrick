@@ -25,7 +25,7 @@ class Application
 	uint m_uOctantLevels = 0; //Number of levels in the octree
 	MyOctree* m_pRoot = nullptr;
 private:
-	String m_sProgrammer = "Nathan Glick - nxg9997@rit.edu"; //programmer
+	String m_sProgrammer = "Sponsored by Alberto Shampoo"; //programmer
 
 	static ImGuiObject gui; //GUI object
 	bool m_bGUI_Main = true; //show Main GUI window?
@@ -61,6 +61,8 @@ private:
 	sf::SoundBuffer m_soundBuffer; //buffer to play sound from
 	sf::Sound m_sound; //sound effect
 	sf::Music m_soundBGM; //background music
+
+	float m_playerMovement = 0.f;
 
 public:
 #pragma region Constructor / Run / Destructor
