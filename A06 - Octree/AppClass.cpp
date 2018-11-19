@@ -14,7 +14,9 @@ void Application::InitVariables(void)
 	//m_pEntityMngr->Update();
 	//m_pRoot = new MyOctree(m_uOctantLevels, 5); //getentitycount read access violation???
 
-	m_pMeshMngr->GenerateCylinder(2.f, 30.f, 10, C_BLUE);
+	m_platform = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCylinder(2.f, 30.f, 10.f, C_BLUE))->GetVertexList());
+	m_ball = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateIcoSphere(3.f, 15, C_BLACK))->GetVertexList());
+	
 }
 void Application::Update(void)
 {
@@ -36,8 +38,36 @@ void Application::Update(void)
 
 	matrix4 model;
 	matrix4 rotation = glm::rotate(IDENTITY_M4, glm::radians(90.f), AXIS_Z);
-	model = rotation * glm::translate(IDENTITY_M4, vector3(-40.f, m_playerMovement, 0.f));
+	model = glm::translate(IDENTITY_M4, vector3(m_playerMovement, -40.f, 0.f)) * rotation;
+
+	m_platform->SetModelMatrix(model);
 	m_pMeshMngr->AddCylinderToRenderList(model, C_BLUE);
+	
+
+	if (m_isSphere)//If the sphere is active, let it move in a straight line until Y = 100, then do not render it anymore
+	{
+		if (m_bounceReverse)
+			m_spherePosY -= 1.5f;
+		else
+			m_spherePosY += 1.5f;
+		
+		matrix4 sphereModel = glm::translate(IDENTITY_M4, vector3(m_spherePosX, m_spherePosY, 0.f));
+		m_ball->SetModelMatrix(sphereModel);
+		m_pMeshMngr->AddIcoSphereToRenderList(sphereModel, C_BLACK);
+
+		if (m_spherePosY >= 55.f)
+			m_bounceReverse = true;
+		if (m_platform->IsColliding(m_ball))
+			m_bounceReverse = false;
+
+		if (m_spherePosY <= -60.f)//Do not render the sphere and reset its values
+		{
+			m_isSphere = false;
+			m_bounceReverse = false;
+			m_spherePosY = -35.f;
+		}
+	}
+	
 
 }
 void Application::Display(void)
@@ -70,4 +100,6 @@ void Application::Release(void)
 	ShutdownGUI();
 
 	SafeDelete(m_pRoot);
+	SafeDelete(m_platform);
+	SafeDelete(m_ball);
 }

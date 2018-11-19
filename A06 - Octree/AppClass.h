@@ -62,7 +62,15 @@ private:
 	sf::Sound m_sound; //sound effect
 	sf::Music m_soundBGM; //background music
 
+	RigidBody* m_platform = nullptr;
+	RigidBody* m_ball = nullptr;
+
 	float m_playerMovement = 0.f;
+
+	bool m_isSphere = false;
+	bool m_bounceReverse = false;
+	float m_spherePosY = -35.f;
+	float m_spherePosX = 0.f;
 
 public:
 #pragma region Constructor / Run / Destructor

@@ -41,6 +41,7 @@ void Application::DrawGUI(void)
 			ImGui::Separator();
 			ImGui::Text("Controls:\n");
 			ImGui::Text("   AD: Movement Left and Right\n");
+			ImGui::Text("   Spacebar: Release the ball\n");
 			ImGui::Separator();
 			ImGui::TextColored(ImColor(255, 255, 0), "Milestone 1\n");
 		}

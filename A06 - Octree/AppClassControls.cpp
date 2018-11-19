@@ -411,21 +411,30 @@ void Application::ProcessKeyboard(void)
 	This is used for things that are continuously happening,
 	for discreet on/off use ProcessKeyboardPressed/Released
 	*/
+	//If you press the A or D key, move the platform left or right respectively
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	{
-		m_playerMovement += 1.f;
-
-		if(m_playerMovement >= 75.f)
-			m_playerMovement = 75.f;
-	}
-		
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
 		m_playerMovement -= 1.f;
 
-		if (m_playerMovement <= -75.f)
-			m_playerMovement = -75.f;
+		if(m_playerMovement <= -80.f)
+			m_playerMovement = -80.f;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	{
+		m_playerMovement += 1.f;
+
+		if (m_playerMovement >= 80.f)
+			m_playerMovement = 80.f;
+	}
+
+	//If the sphere is inactive you can shoot it again
+	if (!m_isSphere)
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))//If you press space, the sphere because active
+		{
+			m_isSphere = true;
+			m_spherePosX = m_playerMovement;
+		}
 	}
 }
 //Joystick
