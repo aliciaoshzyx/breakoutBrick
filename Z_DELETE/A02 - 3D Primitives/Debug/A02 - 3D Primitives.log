@@ -1,0 +1,40 @@
+﻿  MyMesh.cpp
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(283): warning C4018: '<': signed/unsigned mismatch
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(285): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(286): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(321): warning C4018: '<': signed/unsigned mismatch
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(323): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(324): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(373): warning C4018: '<': signed/unsigned mismatch
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(375): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(376): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(395): warning C4018: '<': signed/unsigned mismatch
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(397): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(398): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(478): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(480): warning C4018: '<': signed/unsigned mismatch
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(483): warning C4018: '<': signed/unsigned mismatch
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(493): warning C4018: '<': signed/unsigned mismatch
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(501): warning C4018: '<': signed/unsigned mismatch
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(504): warning C4018: '<': signed/unsigned mismatch
+f:\projects\simplex_2181\a02 - 3d primitives\mymesh.cpp(516): warning C4018: '<': signed/unsigned mismatch
+  A02 - 3D Primitives.vcxproj -> F:\Projects\Simplex_2181\Z_DELETE\A02 - 3D Primitives_d.exe
+  Copying Shaders...
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Basic-Instanced.vs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Basic.fs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Basic.vs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\BasicColor.fs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\BasicColor.vs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Line.fs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Line.vs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Minimal.fs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Minimal.vs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\MinimalRed.fs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Simplex.fs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Simplex.vs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Skybox.fs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Skybox.vs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Text.fs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Text.vs
+  F:\Projects\Simplex_2181\include\Simplex\Shaders\Wireframe.fs
+  17 File(s) copied
