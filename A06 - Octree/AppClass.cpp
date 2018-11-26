@@ -16,6 +16,25 @@ void Application::InitVariables(void)
 
 	m_platform = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCylinder(2.f, 30.f, 10.f, C_BLUE))->GetVertexList());
 	m_ball = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateIcoSphere(3.f, 15, C_BLACK))->GetVertexList());
+
+	//bricks
+	m_brick1 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick2 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick3 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick4 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick5 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+
+	m_brick6 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick7 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick8 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick9 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick10 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+
+	m_brick11 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick12 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick13 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick14 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick15 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
 	
 }
 void Application::Update(void)
@@ -42,7 +61,44 @@ void Application::Update(void)
 
 	m_platform->SetModelMatrix(model);
 	m_pMeshMngr->AddCylinderToRenderList(model, C_BLUE);
+	//bricks
+	m_brick1->SetModelMatrix(glm::translate(vector3(0, -40, -100.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(0, -40, -100.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick2->SetModelMatrix(glm::translate(vector3(-11, -40, -100.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-11, -40, -100.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick3->SetModelMatrix(glm::translate(vector3(11, -40, -100.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(11, -40, -100.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick4->SetModelMatrix(glm::translate(vector3(-22, -40, -100.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-22, -40, -100.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick5->SetModelMatrix(glm::translate(vector3(22, -40, -100.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, -40, -100.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+
+
+	/*
+	m_brick6->SetModelMatrix(glm::translate(vector3(0, -40, -105.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(0, -40, -200.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick7->SetModelMatrix(glm::translate(vector3(-11, -40, -105.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-11, -40, -105.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick8->SetModelMatrix(glm::translate(vector3(11, -40, -105.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(11, -40, -105.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick9->SetModelMatrix(glm::translate(vector3(-22, -40, -105.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-22, -40, -105.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick10->SetModelMatrix(glm::translate(vector3(22, -40, -105.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, -40, -105.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+
 	
+	m_brick11->SetModelMatrix(glm::translate(vector3(0, -40, -110.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(0, -40, -110.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick12->SetModelMatrix(glm::translate(vector3(-11, -40, -110.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-11, -40, -110.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick13->SetModelMatrix(glm::translate(vector3(11, -40, -110.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(11, -40, -110.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick14->SetModelMatrix(glm::translate(vector3(-22, -40, -110.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-22, -40, -110.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick15->SetModelMatrix(glm::translate(vector3(22, -40, -110.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, -40, -110.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	*/
+
 
 	if (m_isSphere)//If the sphere is active, let it move in a straight line until Y = 100, then do not render it anymore
 	{
@@ -102,4 +158,22 @@ void Application::Release(void)
 	SafeDelete(m_pRoot);
 	SafeDelete(m_platform);
 	SafeDelete(m_ball);
+
+	SafeDelete(m_brick1);
+	SafeDelete(m_brick2);
+	SafeDelete(m_brick3);
+	SafeDelete(m_brick4);
+	SafeDelete(m_brick5);
+
+	SafeDelete(m_brick6);
+	SafeDelete(m_brick7);
+	SafeDelete(m_brick8);
+	SafeDelete(m_brick9);
+	SafeDelete(m_brick10);
+
+	SafeDelete(m_brick11);
+	SafeDelete(m_brick12);
+	SafeDelete(m_brick13);
+	SafeDelete(m_brick14);
+	SafeDelete(m_brick15);
 }

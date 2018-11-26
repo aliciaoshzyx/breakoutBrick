@@ -65,6 +65,26 @@ private:
 	RigidBody* m_platform = nullptr;
 	RigidBody* m_ball = nullptr;
 
+	RigidBody* m_brick1 = nullptr;
+	RigidBody* m_brick2 = nullptr;
+	RigidBody* m_brick3 = nullptr;
+	RigidBody* m_brick4 = nullptr;
+	RigidBody* m_brick5 = nullptr;
+
+	RigidBody* m_brick6 = nullptr;
+	RigidBody* m_brick7 = nullptr;
+	RigidBody* m_brick8 = nullptr;
+	RigidBody* m_brick9 = nullptr;
+	RigidBody* m_brick10 = nullptr;
+
+	RigidBody* m_brick11 = nullptr;
+	RigidBody* m_brick12 = nullptr;
+	RigidBody* m_brick13 = nullptr;
+	RigidBody* m_brick14 = nullptr;
+	RigidBody* m_brick15 = nullptr;
+
+
+
 	float m_playerMovement = 0.f;
 
 	bool m_isSphere = false;
