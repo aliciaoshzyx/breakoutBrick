@@ -62,42 +62,42 @@ void Application::Update(void)
 	m_platform->SetModelMatrix(model);
 	m_pMeshMngr->AddCylinderToRenderList(model, C_BLUE);
 	//bricks
-	m_brick1->SetModelMatrix(glm::translate(vector3(0, -40, -100.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(0, -40, -100.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick2->SetModelMatrix(glm::translate(vector3(-11, -40, -100.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-11, -40, -100.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick3->SetModelMatrix(glm::translate(vector3(11, -40, -100.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(11, -40, -100.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick4->SetModelMatrix(glm::translate(vector3(-22, -40, -100.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-22, -40, -100.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick5->SetModelMatrix(glm::translate(vector3(22, -40, -100.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, -40, -100.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick1->SetModelMatrix(glm::translate(vector3(0, 40, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(0, 40, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick2->SetModelMatrix(glm::translate(vector3(-11, 40, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-11, 40, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick3->SetModelMatrix(glm::translate(vector3(11, 40, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(11, 40, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick4->SetModelMatrix(glm::translate(vector3(-22, 40, -100.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-22, 40, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick5->SetModelMatrix(glm::translate(vector3(22, 40, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, 40, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
 
-
-	/*
-	m_brick6->SetModelMatrix(glm::translate(vector3(0, -40, -105.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(0, -40, -200.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick7->SetModelMatrix(glm::translate(vector3(-11, -40, -105.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-11, -40, -105.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick8->SetModelMatrix(glm::translate(vector3(11, -40, -105.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(11, -40, -105.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick9->SetModelMatrix(glm::translate(vector3(-22, -40, -105.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-22, -40, -105.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick10->SetModelMatrix(glm::translate(vector3(22, -40, -105.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, -40, -105.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
 
 	
-	m_brick11->SetModelMatrix(glm::translate(vector3(0, -40, -110.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(0, -40, -110.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick12->SetModelMatrix(glm::translate(vector3(-11, -40, -110.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-11, -40, -110.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick13->SetModelMatrix(glm::translate(vector3(11, -40, -110.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(11, -40, -110.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick14->SetModelMatrix(glm::translate(vector3(-22, -40, -110.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-22, -40, -110.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	m_brick15->SetModelMatrix(glm::translate(vector3(22, -40, -110.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, -40, -110.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
-	*/
+	m_brick6->SetModelMatrix(glm::translate(vector3(0, 51, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(0, 51, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick7->SetModelMatrix(glm::translate(vector3(-11, 51, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-11, 51, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick8->SetModelMatrix(glm::translate(vector3(11, 51, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(11, 51, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick9->SetModelMatrix(glm::translate(vector3(-22, 51, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-22, 51, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick10->SetModelMatrix(glm::translate(vector3(22, 51, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, 51, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+
+	
+	m_brick11->SetModelMatrix(glm::translate(vector3(0, 62, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(0, 62, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick12->SetModelMatrix(glm::translate(vector3(-11, 62, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-11, 62, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick13->SetModelMatrix(glm::translate(vector3(11, 62, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(11, 62, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick14->SetModelMatrix(glm::translate(vector3(-22, 62, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-22, 62, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_brick15->SetModelMatrix(glm::translate(vector3(22, 62, -40.0f)) * glm::scale(vector3(10.0f)));
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, 62, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	
 
 
 	if (m_isSphere)//If the sphere is active, let it move in a straight line until Y = 100, then do not render it anymore
