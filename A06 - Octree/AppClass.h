@@ -65,6 +65,7 @@ private:
 	RigidBody* m_platform = nullptr;
 	RigidBody* m_ball = nullptr;
 
+	std::vector<RigidBody*> m_bricks;
 	RigidBody* m_brick1 = nullptr;
 	RigidBody* m_brick2 = nullptr;
 	RigidBody* m_brick3 = nullptr;

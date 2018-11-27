@@ -1,22 +1,22 @@
 ﻿  AppClass.cpp
-z:\igmprofile\documents\breakoutbrick\a06 - octree\appclass.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  A06 - Octree.vcxproj -> Z:\IGMProfile\Documents\breakoutBrick\Z_DELETE\A06 - Octree_d.exe
+d:\profiles\ctq6891\source\repos\breakoutbrick\a06 - octree\appclass.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  A06 - Octree.vcxproj -> D:\Profiles\ctq6891\source\repos\breakoutBrick\Z_DELETE\A06 - Octree_d.exe
   Copying Shaders...
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Basic.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Basic.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Line.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Line.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Minimal.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Minimal.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Simplex.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Simplex.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Skybox.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Skybox.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Text.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Text.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Basic.fs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Basic.vs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Line.fs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Line.vs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Minimal.fs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Minimal.vs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Simplex.fs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Simplex.vs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Skybox.fs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Skybox.vs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Text.fs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Text.vs
+  D:\Profiles\ctq6891\source\repos\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
   17 File(s) copied
