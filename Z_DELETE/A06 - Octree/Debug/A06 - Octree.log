@@ -1,22 +1,22 @@
 ﻿  AppClass.cpp
-z:\igmprofile\documents\breakoutbrick\a06 - octree\appclass.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  A06 - Octree.vcxproj -> Z:\IGMProfile\Documents\breakoutBrick\Z_DELETE\A06 - Octree_d.exe
+f:\projects\breakoutbrick\a06 - octree\appclass.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  A06 - Octree.vcxproj -> F:\Projects\breakoutBrick\Z_DELETE\A06 - Octree_d.exe
   Copying Shaders...
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Basic.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Basic.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Line.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Line.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Minimal.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Minimal.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Simplex.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Simplex.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Skybox.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Skybox.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Text.fs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Text.vs
-  Z:\IGMProfile\Documents\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Basic.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Basic.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Line.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Line.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Minimal.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Minimal.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Simplex.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Simplex.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Skybox.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Skybox.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Text.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Text.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
   17 File(s) copied

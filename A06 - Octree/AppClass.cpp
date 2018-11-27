@@ -98,14 +98,22 @@ void Application::Update(void)
 	m_brick15->SetModelMatrix(glm::translate(vector3(22, 62, -40.0f)) * glm::scale(vector3(10.0f)));
 	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, 62, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
 	
-
+	static float bounceAngle = 0.0f;
 
 	if (m_isSphere)//If the sphere is active, let it move in a straight line until Y = 100, then do not render it anymore
 	{
 		if (m_bounceReverse)
+		{
 			m_spherePosY -= 1.5f;
+			m_spherePosX += bounceAngle;
+
+		}
 		else
+		{
 			m_spherePosY += 1.5f;
+			m_spherePosX += bounceAngle;
+			//bounceAngle = 0.0f;
+		}
 		
 		matrix4 sphereModel = glm::translate(IDENTITY_M4, vector3(m_spherePosX, m_spherePosY, 0.f));
 		m_ball->SetModelMatrix(sphereModel);
@@ -114,13 +122,18 @@ void Application::Update(void)
 		if (m_spherePosY >= 55.f)
 			m_bounceReverse = true;
 		if (m_platform->IsColliding(m_ball))
+		{
 			m_bounceReverse = false;
+			bounceAngle = (glm::dot(m_ball->GetCenterGlobal(), m_platform->GetCenterGlobal()) - 3000.f) / 1000.f;
+			std::cout << bounceAngle << std::endl;
+		}
 
 		if (m_spherePosY <= -60.f)//Do not render the sphere and reset its values
 		{
 			m_isSphere = false;
 			m_bounceReverse = false;
 			m_spherePosY = -35.f;
+			bounceAngle = 0.0f;
 		}
 	}
 	
