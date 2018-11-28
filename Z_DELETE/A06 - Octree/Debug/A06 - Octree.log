@@ -1,22 +1,21 @@
 ﻿  AppClass.cpp
-c:\users\zheng\desktop\gdd2_finalproject\breakoutbrick\a06 - octree\appclass.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  A06 - Octree.vcxproj -> C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\Z_DELETE\A06 - Octree_d.exe
+  A06 - Octree.vcxproj -> C:\Users\Christopher\Source\Repos\breakoutBrick\Z_DELETE\A06 - Octree_d.exe
   Copying Shaders...
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Basic.fs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Basic.vs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Line.fs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Line.vs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Minimal.fs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Minimal.vs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Simplex.fs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Simplex.vs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Skybox.fs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Skybox.vs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Text.fs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Text.vs
-  C:\Users\zheng\Desktop\GDD2_FinalProject\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Basic.fs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Basic.vs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Line.fs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Line.vs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Minimal.fs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Minimal.vs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Simplex.fs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Simplex.vs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Skybox.fs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Skybox.vs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Text.fs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Text.vs
+  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
   17 File(s) copied

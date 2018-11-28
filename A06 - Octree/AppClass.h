@@ -62,33 +62,14 @@ private:
 	sf::Sound m_sound; //sound effect
 	sf::Music m_soundBGM; //background music
 
-	RigidBody* m_platform = nullptr;
-	RigidBody* m_ball = nullptr;
-
-	RigidBody* m_brick1 = nullptr;
-	RigidBody* m_brick2 = nullptr;
-	RigidBody* m_brick3 = nullptr;
-	RigidBody* m_brick4 = nullptr;
-	RigidBody* m_brick5 = nullptr;
-
-	RigidBody* m_brick6 = nullptr;
-	RigidBody* m_brick7 = nullptr;
-	RigidBody* m_brick8 = nullptr;
-	RigidBody* m_brick9 = nullptr;
-	RigidBody* m_brick10 = nullptr;
-
-	RigidBody* m_brick11 = nullptr;
-	RigidBody* m_brick12 = nullptr;
-	RigidBody* m_brick13 = nullptr;
-	RigidBody* m_brick14 = nullptr;
-	RigidBody* m_brick15 = nullptr;
-
-
+	MyRigidBody* m_platform = nullptr;
+	MyRigidBody* m_ball = nullptr;
 
 	float m_playerMovement = 0.f;
 
 	bool m_isSphere = false;
-	bool m_bounceReverse = false;
+	bool m_verticalBounce = false;
+	bool m_horizontalBounce = false;
 	float m_spherePosY = -35.f;
 	float m_spherePosX = 0.f;
 
