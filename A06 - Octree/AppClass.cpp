@@ -18,7 +18,55 @@ void Application::InitVariables(void)
 	m_ball = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateIcoSphere(3.f, 15, C_BLACK))->GetVertexList());
 
 	//bricks
-	m_brick1 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	
+	//Entity Manager
+	m_pEntityMngr = MyEntityManager::GetInstance();
+
+	uint uInstances = 20;
+	int nSquare = static_cast<int>(std::sqrt(uInstances));
+	uInstances = nSquare * nSquare;
+	uint uIndex = 0;
+
+	uint xPosition = 0;
+	uint yPosition = 0;
+	uint zPosition = 55;
+	
+	for (int i = 0; i < nSquare; i++)
+	{
+		for (int j = 0; j < nSquare; j++)
+		{
+			m_pEntityMngr->AddEntity("BreakoutBrick\\brick.obj", "Brick1");
+			vector3 v3Position = vector3(xPosition, yPosition, zPosition);
+			matrix4 m4Position = glm::translate(v3Position);
+			m_pEntityMngr->SetModelMatrix(m4Position);
+			//m_pEntityMngr->AddDimension(-1, uIndex);
+			//++uIndex;
+
+			if (v3Position.x < 0.0f)
+			{
+				if (v3Position.x < -17.0f)
+					m_pEntityMngr->AddDimension(-1, 1);
+				else
+					m_pEntityMngr->AddDimension(-1, 2);
+			}
+			else if (v3Position.x > 0.0f)
+			{
+				if (v3Position.x > 17.0f)
+					m_pEntityMngr->AddDimension(-1, 3);
+				else
+					m_pEntityMngr->AddDimension(-1, 4);
+			}
+
+			xPosition += 7;
+		}
+
+		xPosition = 0;
+		yPosition += 5;
+	}
+	m_pEntityMngr->Update();
+
+
+	/*m_brick1 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
 	m_brick2 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
 	m_brick3 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
 	m_brick4 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
@@ -34,7 +82,7 @@ void Application::InitVariables(void)
 	m_brick12 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
 	m_brick13 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
 	m_brick14 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
-	m_brick15 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());
+	m_brick15 = new RigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCube(1.0f, C_RED))->GetVertexList());*/
 	
 }
 void Application::Update(void)
@@ -49,11 +97,12 @@ void Application::Update(void)
 	CameraRotation();
 	
 	////Update Entity Manager
-	//m_pEntityMngr->Update();
-	//m_pRoot->Display(m_uOctantID, C_YELLOW);
+	m_pEntityMngr->Update();
 
-	////Add objects to render list
-	//m_pEntityMngr->AddEntityToRenderList(-1, true);
+	//Add objects to render list
+	m_pEntityMngr->AddEntityToRenderList(-1, true);
+
+	//m_pRoot->Display(m_uOctantID, C_YELLOW);
 
 	matrix4 model;
 	matrix4 rotation = glm::rotate(IDENTITY_M4, glm::radians(90.f), AXIS_Z);
@@ -62,7 +111,7 @@ void Application::Update(void)
 	m_platform->SetModelMatrix(model);
 	m_pMeshMngr->AddCylinderToRenderList(model, C_BLUE);
 	//bricks
-	m_brick1->SetModelMatrix(glm::translate(vector3(0, 40, -40.0f)) * glm::scale(vector3(10.0f)));
+	/*m_brick1->SetModelMatrix(glm::translate(vector3(0, 40, -40.0f)) * glm::scale(vector3(10.0f)));
 	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(0, 40, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
 	m_brick2->SetModelMatrix(glm::translate(vector3(-11, 40, -40.0f)) * glm::scale(vector3(10.0f)));
 	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-11, 40, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
@@ -96,7 +145,7 @@ void Application::Update(void)
 	m_brick14->SetModelMatrix(glm::translate(vector3(-22, 62, -40.0f)) * glm::scale(vector3(10.0f)));
 	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(-22, 62, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
 	m_brick15->SetModelMatrix(glm::translate(vector3(22, 62, -40.0f)) * glm::scale(vector3(10.0f)));
-	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, 62, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);
+	m_pMeshMngr->AddCubeToRenderList(glm::translate(vector3(22, 62, -40.0f)) * glm::scale(vector3(10.0f)), C_BROWN);*/
 	
 	static float bounceAngle = 0.0f;
 
