@@ -17,8 +17,6 @@ void Application::InitVariables(void)
 	m_platform = new MyRigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCylinder(2.f, 30.f, 10, C_BLUE))->GetVertexList());
 	m_ball = new MyRigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateIcoSphere(3.f, 15, C_BLACK))->GetVertexList());
 
-	//bricks
-	
 	//Entity Manager
 	m_pEntityMngr = MyEntityManager::GetInstance();
 
