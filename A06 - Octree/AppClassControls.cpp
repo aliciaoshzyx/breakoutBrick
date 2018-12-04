@@ -427,6 +427,11 @@ void Application::ProcessKeyboard(void)
 			m_playerMovement = 80.f;
 	}
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+		m_bToggle = !m_bToggle;
+	}
+
 	//If the sphere is inactive you can shoot it again
 	if (!m_isSphere)
 	{

@@ -24,6 +24,7 @@ class Application
 	uint m_uObjects = 0; //Number of objects in the scene
 	uint m_uOctantLevels = 0; //Number of levels in the octree
 	MyOctree* m_pRoot = nullptr;
+	bool m_bToggle = false;
 private:
 	String m_sProgrammer = "Sponsored by Alberto Shampoo"; //programmer
 
@@ -63,7 +64,8 @@ private:
 	sf::Music m_soundBGM; //background music
 
 	MyRigidBody* m_platform = nullptr;
-	MyRigidBody* m_ball = nullptr;
+	//MyRigidBody* m_ball = nullptr;
+	MyEntity* m_ball = nullptr;
 
 	float m_playerMovement = 170.f;
 
@@ -183,6 +185,8 @@ private:
 	OUTPUT: ---
 	*/
 	void ReleaseControllers(void);
+
+	void ChangeBallDimention();
 #pragma endregion
 
 #pragma region Application Controls

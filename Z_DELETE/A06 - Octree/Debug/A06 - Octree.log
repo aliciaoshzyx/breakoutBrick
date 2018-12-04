@@ -1,21 +1,26 @@
 ﻿  AppClass.cpp
-  A06 - Octree.vcxproj -> Z:\IGMProfile\Documents\breakourbrick1\Z_DELETE\A06 - Octree_d.exe
+  AppClassControls.cpp
+  AppClassGUI.cpp
+  AppClassMain.cpp
+  Main.cpp
+  Generating Code...
+  A06 - Octree.vcxproj -> C:\Users\natha\Desktop\Repo\breakoutBrick\Z_DELETE\A06 - Octree_d.exe
   Copying Shaders...
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Basic-Instanced.vs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Basic.fs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Basic.vs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\BasicColor.fs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\BasicColor.vs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Line.fs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Line.vs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Minimal.fs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Minimal.vs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\MinimalRed.fs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Simplex.fs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Simplex.vs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Skybox.fs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Skybox.vs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Text.fs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Text.vs
-  Z:\IGMProfile\Documents\breakourbrick1\include\Simplex\Shaders\Wireframe.fs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Basic.fs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Basic.vs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Line.fs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Line.vs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Minimal.fs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Minimal.vs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Simplex.fs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Simplex.vs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Skybox.fs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Skybox.vs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Text.fs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Text.vs
+  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
   17 File(s) copied

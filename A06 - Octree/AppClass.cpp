@@ -10,12 +10,12 @@ void Application::InitVariables(void)
 
 	m_pLightMngr->SetPosition(vector3(0.0f, 3.0f, 13.0f), 1); //set the position of first light (0 is reserved for ambient light)
 
-	//m_uOctantLevels = 3;
-	//m_pEntityMngr->Update();
-	//m_pRoot = new MyOctree(m_uOctantLevels, 5); //getentitycount read access violation???
+	m_uOctantLevels = 3;
+	m_pEntityMngr->Update();
+	m_pRoot = new MyOctree(m_uOctantLevels, 5);
 
 	m_platform = new MyRigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCylinder(2.f, 30.f, 10, C_BLUE))->GetVertexList());
-	m_ball = new MyRigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateIcoSphere(3.f, 15, C_BLACK))->GetVertexList());
+	m_ball = new MyEntity("BreakoutBrick\\brick.obj", "Ball");//new MyRigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateIcoSphere(3.f, 15, C_BLACK))->GetVertexList());
 
 	//Entity Manager
 	m_pEntityMngr = MyEntityManager::GetInstance();
@@ -37,10 +37,10 @@ void Application::InitVariables(void)
 			vector3 v3Position = vector3(xPosition, yPosition, zPosition);
 			matrix4 m4Position = glm::translate(v3Position) * glm::scale(vector3(2.f));
 			m_pEntityMngr->SetModelMatrix(m4Position);
-			//m_pEntityMngr->AddDimension(-1, uIndex);
+			m_pEntityMngr->AddDimension(-1, j);
 			//++uIndex;
 
-			if (v3Position.x < 0.0f)
+			/*if (v3Position.x < 0.0f)
 			{
 				if (v3Position.x < -17.0f)
 					m_pEntityMngr->AddDimension(-1, 1);
@@ -53,13 +53,13 @@ void Application::InitVariables(void)
 					m_pEntityMngr->AddDimension(-1, 3);
 				else
 					m_pEntityMngr->AddDimension(-1, 4);
-			}
+			}*/
 
 			xPosition += 10;
 		}
 
 		xPosition = 0;
-		yPosition += 5;
+		yPosition += 6;
 	}
 
 	m_pEntityMngr->Update();
@@ -76,13 +76,15 @@ void Application::Update(void)
 	CameraRotation();
 	
 	////Update Entity Manager
-	if(m_pEntityMngr->GetEntityCount() > 0)
+	if(m_pEntityMngr->GetEntityCount() > 0 && m_bToggle)
 		m_pEntityMngr->Update();
 
 	//Add objects to render list
 	m_pEntityMngr->AddEntityToRenderList(-1, true);
 
-	//m_pRoot->Display(m_uOctantID, C_YELLOW);
+	ChangeBallDimention();
+
+	m_pRoot->Display(m_uOctantID, C_YELLOW);
 
 	matrix4 model;
 	matrix4 rotation = glm::rotate(IDENTITY_M4, glm::radians(90.f), AXIS_Z);
@@ -91,7 +93,7 @@ void Application::Update(void)
 	m_platform->SetModelMatrix(model);
 	m_pMeshMngr->AddCylinderToRenderList(model, C_BLUE);
 	
-	static float bounceAngle = (glm::dot(m_ball->GetCenterGlobal(), m_platform->GetCenterGlobal()) - 3000.f) / 2000.f;
+	static float bounceAngle = (glm::dot(m_ball->GetRigidBody()->GetCenterGlobal(), m_platform->GetCenterGlobal()) - 3000.f) / 2000.f;
 
 	if (m_isSphere)//If the sphere is active, let it move in a straight line until Y = 100, then do not render it anymore
 	{
@@ -117,7 +119,7 @@ void Application::Update(void)
 		else if (m_spherePosX <= -95.f)
 			m_horizontalBounce = true;
 
-		if (m_platform->IsColliding(m_ball))
+		if (m_platform->IsColliding(m_ball->GetRigidBody()))
 		{
 			m_verticalBounce = false;
 		}
@@ -132,7 +134,7 @@ void Application::Update(void)
 
 		for (uint i = 0; i < m_pEntityMngr->GetEntityCount(); i++)
 		{
-			if (m_ball->IsColliding(m_pEntityMngr->GetEntity(i)->GetRigidBody()))
+			if (m_ball->GetRigidBody()->IsColliding(m_pEntityMngr->GetEntity(i)->GetRigidBody()))
 			{
 				m_pEntityMngr->RemoveEntity(i);
 				m_verticalBounce = !m_verticalBounce;
@@ -142,6 +144,20 @@ void Application::Update(void)
 	
 
 }
+
+void Application::ChangeBallDimention() {
+	for (int i = 0; i < 33 * 6; i++) {
+		if (m_ball->GetRigidBody()->GetCenterGlobal().y + m_ball->GetRigidBody()->GetHalfWidth().y >= 6 * i) {
+			m_ball->ClearDimensionSet();
+			if (i == 0) {
+				m_ball->AddDimension(0);
+
+			}
+			else m_ball->AddDimension(33*6%i);
+		}
+	}
+}
+
 void Application::Display(void)
 {
 
@@ -149,7 +165,7 @@ void Application::Display(void)
 	ClearScreen();
 
 	//display octree
-	//m_pRoot->Display();
+	m_pRoot->Display(C_YELLOW);
 	
 	// draw a skybox
 	m_pMeshMngr->AddSkyboxToRenderList();
