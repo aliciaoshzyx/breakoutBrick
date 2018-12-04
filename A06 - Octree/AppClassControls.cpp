@@ -150,6 +150,10 @@ void Application::ProcessKeyReleased(sf::Event a_event)
 	case sf::Keyboard::LShift:
 	case sf::Keyboard::RShift:
 		m_bModifier = false;
+
+	case sf::Keyboard::S:
+		m_bToggle = !m_bToggle;
+		break;
 	}
 
 	//gui
@@ -414,22 +418,17 @@ void Application::ProcessKeyboard(void)
 	//If you press the A or D key, move the platform left or right respectively
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-		m_playerMovement -= 1.f;
+		m_playerMovement -= 1.25f;
 
-		if(m_playerMovement <= -80.f)
-			m_playerMovement = -80.f;
+		if(m_playerMovement <= 20.f)
+			m_playerMovement = 20.f;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-		m_playerMovement += 1.f;
+		m_playerMovement += 1.25f;
 
-		if (m_playerMovement >= 80.f)
-			m_playerMovement = 80.f;
-	}
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	{
-		m_bToggle = !m_bToggle;
+		if (m_playerMovement >= 315.f)
+			m_playerMovement = 315.f;
 	}
 
 	//If the sphere is inactive you can shoot it again

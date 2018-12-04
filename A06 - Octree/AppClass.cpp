@@ -4,10 +4,10 @@ void Application::InitVariables(void)
 {
 	//Set the position and target of the camera
 	m_pCameraMngr->SetPositionTargetAndUpward(
-		vector3(170.0f, 50.0f, 280.0f), //Position
-		vector3(170.0f, 50.0f, 99.0f),	//Target
+		vector3(167.f, -90.f, 215.f), //Position
+		vector3(167.f, 70.f, -20.f),	//Target
 		AXIS_Y);					//Up
-
+	//m_pCameraMngr->SetFOV();
 	m_pLightMngr->SetPosition(vector3(0.0f, 3.0f, 13.0f), 1); //set the position of first light (0 is reserved for ambient light)
 
 	m_uOctantLevels = 3;
@@ -25,9 +25,9 @@ void Application::InitVariables(void)
 	uInstances = nSquare * nSquare;
 	uint uIndex = 0;
 
-	uint xPosition = 0;
-	uint yPosition = 0;
-	uint zPosition = 0;
+	float xPosition = 0;
+	float yPosition = 0;
+	float zPosition = 0;
 	
 	for (int i = 0; i < nSquare; i++)
 	{
@@ -55,11 +55,11 @@ void Application::InitVariables(void)
 					m_pEntityMngr->AddDimension(-1, 4);
 			}*/
 
-			xPosition += 10;
+			xPosition += 10.5f;
 		}
 
 		xPosition = 0;
-		yPosition += 6;
+		yPosition += 5.5f;
 	}
 
 	m_pEntityMngr->Update();
@@ -76,7 +76,7 @@ void Application::Update(void)
 	CameraRotation();
 	
 	////Update Entity Manager
-	if(m_pEntityMngr->GetEntityCount() > 0 && m_bToggle)
+	if(m_bToggle && m_pEntityMngr->GetEntityCount() > 0)
 		m_pEntityMngr->Update();
 
 	//Add objects to render list
@@ -93,7 +93,7 @@ void Application::Update(void)
 	m_platform->SetModelMatrix(model);
 	m_pMeshMngr->AddCylinderToRenderList(model, C_BLUE);
 	
-	static float bounceAngle = (glm::dot(m_ball->GetRigidBody()->GetCenterGlobal(), m_platform->GetCenterGlobal()) - 3000.f) / 2000.f;
+	static float bounceAngle = (glm::dot(m_ball->GetRigidBody()->GetCenterGlobal(), m_platform->GetCenterGlobal()) - 1500.f) / 2000.f;
 
 	if (m_isSphere)//If the sphere is active, let it move in a straight line until Y = 100, then do not render it anymore
 	{
@@ -109,14 +109,14 @@ void Application::Update(void)
 
 		matrix4 sphereModel = glm::translate(IDENTITY_M4, vector3(m_spherePosX, m_spherePosY, 0.f));
 		m_ball->SetModelMatrix(sphereModel);
-		m_pMeshMngr->AddIcoSphereToRenderList(sphereModel, C_BLACK);
+		m_ball->AddToRenderList();
 
-		if (m_spherePosY >= 55.f)
+		if (m_spherePosY >= 200.f)
 			m_verticalBounce = true;
 
-		if (m_spherePosX >= 95.f)
+		if (m_spherePosX >= 335.f)
 			m_horizontalBounce = false;
-		else if (m_spherePosX <= -95.f)
+		else if (m_spherePosX <= 0.f)
 			m_horizontalBounce = true;
 
 		if (m_platform->IsColliding(m_ball->GetRigidBody()))
@@ -124,7 +124,7 @@ void Application::Update(void)
 			m_verticalBounce = false;
 		}
 
-		if (m_spherePosY <= -60.f)//Do not render the sphere and reset its values
+		if (m_spherePosY <= -80.f)//Do not render the sphere and reset its values
 		{
 			m_isSphere = false;
 			m_verticalBounce = false;
