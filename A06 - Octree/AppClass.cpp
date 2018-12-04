@@ -4,8 +4,8 @@ void Application::InitVariables(void)
 {
 	//Set the position and target of the camera
 	m_pCameraMngr->SetPositionTargetAndUpward(
-		vector3(0.0f, 0.0f, 100.0f), //Position
-		vector3(0.0f, 0.0f, 99.0f),	//Target
+		vector3(170.0f, 50.0f, 280.0f), //Position
+		vector3(170.0f, 50.0f, 99.0f),	//Target
 		AXIS_Y);					//Up
 
 	m_pLightMngr->SetPosition(vector3(0.0f, 3.0f, 13.0f), 1); //set the position of first light (0 is reserved for ambient light)
@@ -20,7 +20,7 @@ void Application::InitVariables(void)
 	//Entity Manager
 	m_pEntityMngr = MyEntityManager::GetInstance();
 
-	uint uInstances = 20;
+	uint uInstances = 1100;
 	int nSquare = static_cast<int>(std::sqrt(uInstances));
 	uInstances = nSquare * nSquare;
 	uint uIndex = 0;
@@ -55,11 +55,11 @@ void Application::InitVariables(void)
 					m_pEntityMngr->AddDimension(-1, 4);
 			}
 
-			xPosition += 14;
+			xPosition += 10;
 		}
 
 		xPosition = 0;
-		yPosition += 10;
+		yPosition += 5;
 	}
 
 	m_pEntityMngr->Update();

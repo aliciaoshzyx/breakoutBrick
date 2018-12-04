@@ -65,13 +65,13 @@ private:
 	MyRigidBody* m_platform = nullptr;
 	MyRigidBody* m_ball = nullptr;
 
-	float m_playerMovement = 0.f;
+	float m_playerMovement = 170.f;
 
 	bool m_isSphere = false;
 	bool m_verticalBounce = false;
 	bool m_horizontalBounce = false;
 	float m_spherePosY = -35.f;
-	float m_spherePosX = 0.f;
+	float m_spherePosX = 170.f;
 
 public:
 #pragma region Constructor / Run / Destructor
