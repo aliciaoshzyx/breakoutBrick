@@ -1,26 +1,29 @@
 ﻿  AppClass.cpp
+f:\projects\breakoutbrick\a06 - octree\appclass.cpp(163): warning C4018: '<': signed/unsigned mismatch
+f:\projects\breakoutbrick\a06 - octree\appclass.cpp(204): warning C4018: '<': signed/unsigned mismatch
+f:\projects\breakoutbrick\a06 - octree\appclass.cpp(212): warning C4018: '<': signed/unsigned mismatch
   AppClassControls.cpp
   AppClassGUI.cpp
   AppClassMain.cpp
   Main.cpp
   Generating Code...
-  A06 - Octree.vcxproj -> C:\Users\natha\Desktop\Repo\breakoutBrick\Z_DELETE\A06 - Octree_d.exe
+  A06 - Octree.vcxproj -> F:\Projects\breakoutBrick\Z_DELETE\A06 - Octree_d.exe
   Copying Shaders...
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Basic.fs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Basic.vs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Line.fs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Line.vs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Minimal.fs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Minimal.vs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Simplex.fs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Simplex.vs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Skybox.fs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Skybox.vs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Text.fs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Text.vs
-  C:\Users\natha\Desktop\Repo\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Basic.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Basic.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Line.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Line.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Minimal.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Minimal.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Simplex.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Simplex.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Skybox.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Skybox.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Text.fs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Text.vs
+  F:\Projects\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
   17 File(s) copied

@@ -24,7 +24,9 @@ class Application
 	uint m_uObjects = 0; //Number of objects in the scene
 	uint m_uOctantLevels = 0; //Number of levels in the octree
 	MyOctree* m_pRoot = nullptr;
-	bool m_bToggle = false;
+	bool m_bToggle = true;
+	vector3 m_v3PrevBall = vector3(0.f);
+	uint m_uPrevBallDimention = 0;
 private:
 	String m_sProgrammer = "Sponsored by Alberto Shampoo"; //programmer
 
@@ -74,6 +76,8 @@ private:
 	bool m_horizontalBounce = false;
 	float m_spherePosY = -35.f;
 	float m_spherePosX = 170.f;
+	uint m_uDimentionCount = 0;
+	std::vector<uint> m_vDimentions;
 
 public:
 #pragma region Constructor / Run / Destructor
@@ -187,6 +191,7 @@ private:
 	void ReleaseControllers(void);
 
 	void ChangeBallDimention();
+	void ToggleSpacial();
 #pragma endregion
 
 #pragma region Application Controls

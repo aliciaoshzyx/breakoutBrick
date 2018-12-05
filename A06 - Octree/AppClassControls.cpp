@@ -153,6 +153,7 @@ void Application::ProcessKeyReleased(sf::Event a_event)
 
 	case sf::Keyboard::S:
 		m_bToggle = !m_bToggle;
+		std::cout << m_bToggle << std::endl;
 		break;
 	}
 
@@ -430,6 +431,13 @@ void Application::ProcessKeyboard(void)
 		if (m_playerMovement >= 315.f)
 			m_playerMovement = 315.f;
 	}
+
+	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+		m_bToggle = !m_bToggle;
+		std::cout << m_bToggle << std::endl;
+	}*/
+
 
 	//If the sphere is inactive you can shoot it again
 	if (!m_isSphere)

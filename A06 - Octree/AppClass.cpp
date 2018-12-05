@@ -16,6 +16,7 @@ void Application::InitVariables(void)
 
 	m_platform = new MyRigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateCylinder(2.f, 30.f, 10, C_BLUE))->GetVertexList());
 	m_ball = new MyEntity("BreakoutBrick\\brick.obj", "Ball");//new MyRigidBody(m_pMeshMngr->GetMesh(m_pMeshMngr->GenerateIcoSphere(3.f, 15, C_BLACK))->GetVertexList());
+	m_ball->AddDimension(0);
 
 	//Entity Manager
 	m_pEntityMngr = MyEntityManager::GetInstance();
@@ -23,6 +24,7 @@ void Application::InitVariables(void)
 	uint uInstances = 1100;
 	int nSquare = static_cast<int>(std::sqrt(uInstances));
 	uInstances = nSquare * nSquare;
+	m_uDimentionCount = nSquare;
 	uint uIndex = 0;
 
 	float xPosition = 0;
@@ -36,8 +38,10 @@ void Application::InitVariables(void)
 			m_pEntityMngr->AddEntity("BreakoutBrick\\brick.obj", "Brick1");
 			vector3 v3Position = vector3(xPosition, yPosition, zPosition);
 			matrix4 m4Position = glm::translate(v3Position) * glm::scale(vector3(2.f));
+			std::cout << "x:" << v3Position.x << " y:" << v3Position.y << " z:" << v3Position.z << std::endl;
 			m_pEntityMngr->SetModelMatrix(m4Position);
 			m_pEntityMngr->AddDimension(-1, j);
+			m_vDimentions.push_back(j);
 			//++uIndex;
 
 			/*if (v3Position.x < 0.0f)
@@ -76,13 +80,14 @@ void Application::Update(void)
 	CameraRotation();
 	
 	////Update Entity Manager
-	if(m_bToggle && m_pEntityMngr->GetEntityCount() > 0)
+	if(/*m_bToggle && */m_pEntityMngr->GetEntityCount() > 0)
 		m_pEntityMngr->Update();
 
 	//Add objects to render list
 	m_pEntityMngr->AddEntityToRenderList(-1, true);
 
-	ChangeBallDimention();
+	//ChangeBallDimention();
+	ToggleSpacial();
 
 	m_pRoot->Display(m_uOctantID, C_YELLOW);
 
@@ -134,26 +139,80 @@ void Application::Update(void)
 
 		for (uint i = 0; i < m_pEntityMngr->GetEntityCount(); i++)
 		{
-			if (m_ball->GetRigidBody()->IsColliding(m_pEntityMngr->GetEntity(i)->GetRigidBody()))
-			{
-				m_pEntityMngr->RemoveEntity(i);
-				m_verticalBounce = !m_verticalBounce;
-			}
+			//if (m_ball->SharesDimension(m_pEntityMngr->GetEntity(i)))
+			//{
+				if (m_ball->GetRigidBody()->IsColliding(m_pEntityMngr->GetEntity(i)->GetRigidBody()))
+				{
+					m_pEntityMngr->RemoveEntity(i);
+					m_verticalBounce = !m_verticalBounce;
+				}
+			//}
+			
 		}	
 	}
 	
+	m_v3PrevBall = m_ball->GetRigidBody()->GetCenterGlobal();
 
 }
 
 void Application::ChangeBallDimention() {
-	for (int i = 0; i < 33 * 6; i++) {
-		if (m_ball->GetRigidBody()->GetCenterGlobal().y + m_ball->GetRigidBody()->GetHalfWidth().y >= 6 * i) {
-			m_ball->ClearDimensionSet();
-			if (i == 0) {
-				m_ball->AddDimension(0);
+	if (m_bToggle)
+	{
+		m_ball->ClearDimensionSet();
 
+		for (int i = 0; i < m_uDimentionCount; i++)
+		{
+			m_ball->AddDimension(i);
+
+		}
+		std::cout << "off" << std::endl;
+	}
+	else
+	{
+		if ((m_v3PrevBall - m_ball->GetRigidBody()->GetCenterGlobal()).length() >= 5.4f)
+		{
+			if(m_verticalBounce)
+				m_uPrevBallDimention--;
+			else
+				m_uPrevBallDimention++;
+
+			m_ball->ClearDimensionSet();
+			m_ball->AddDimension(m_uPrevBallDimention);
+		}
+		/*for (int i = 0; i < 33 * 6; i++)
+		{
+			if (m_ball->GetRigidBody()->GetCenterGlobal().y + m_ball->GetRigidBody()->GetHalfWidth().y >= 6 * i)
+			{
+				m_ball->ClearDimensionSet();
+				if (i == 0)
+				{
+					m_ball->AddDimension(0);
+
+				}
+				else m_ball->AddDimension(33 * 6 % i);
 			}
-			else m_ball->AddDimension(33*6%i);
+		}*/
+		std::cout << "on" << std::endl;
+
+	}
+	//std::cout << "is in correct dimention: " << m_ball->IsInDimension(m_uPrevBallDimention) << std::endl;
+}
+
+void Simplex::Application::ToggleSpacial()
+{
+	if (m_bToggle){
+		for (int i = 0; i < m_pEntityMngr->GetEntityCount(); i++)
+		{
+			m_pEntityMngr->GetEntity(i)->ClearDimensionSet();
+			m_pEntityMngr->GetEntity(i)->AddDimension(0);
+		}
+	}
+	else
+	{
+		for (int i = 0; i < m_pEntityMngr->GetEntityCount(); i++)
+		{
+			m_pEntityMngr->GetEntity(i)->ClearDimensionSet();
+			m_pEntityMngr->GetEntity(i)->AddDimension(m_vDimentions[i]);
 		}
 	}
 }
