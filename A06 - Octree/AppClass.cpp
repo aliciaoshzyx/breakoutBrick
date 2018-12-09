@@ -4,8 +4,8 @@ void Application::InitVariables(void)
 {
 	//Set the position and target of the camera
 	m_pCameraMngr->SetPositionTargetAndUpward(
-		vector3(167.f, -90.f, 215.f), //Position
-		vector3(167.f, 70.f, -20.f),	//Target
+		vector3(255.f, -90.f, 335.f), //Position
+		vector3(255.f, 70.f, -20.f),	//Target
 		AXIS_Y);					//Up
 	//m_pCameraMngr->SetFOV();
 	m_pLightMngr->SetPosition(vector3(0.0f, 3.0f, 13.0f), 1); //set the position of first light (0 is reserved for ambient light)
@@ -21,7 +21,7 @@ void Application::InitVariables(void)
 	//Entity Manager
 	m_pEntityMngr = MyEntityManager::GetInstance();
 
-	uint uInstances = 1100;
+	uint uInstances = 2500;
 	int nSquare = static_cast<int>(std::sqrt(uInstances));
 	uInstances = nSquare * nSquare;
 	m_uDimentionCount = nSquare;
@@ -38,7 +38,7 @@ void Application::InitVariables(void)
 			m_pEntityMngr->AddEntity("BreakoutBrick\\brick.obj", "Brick1");
 			vector3 v3Position = vector3(xPosition, yPosition, zPosition);
 			matrix4 m4Position = glm::translate(v3Position) * glm::scale(vector3(2.f));
-			std::cout << "x:" << v3Position.x << " y:" << v3Position.y << " z:" << v3Position.z << std::endl;
+			//std::cout << "x:" << v3Position.x << " y:" << v3Position.y << " z:" << v3Position.z << std::endl;
 			m_pEntityMngr->SetModelMatrix(m4Position);
 			m_pEntityMngr->AddDimension(-1, j);
 			m_vDimentions.push_back(j);
@@ -98,14 +98,14 @@ void Application::Update(void)
 	m_platform->SetModelMatrix(model);
 	m_pMeshMngr->AddCylinderToRenderList(model, C_BLUE);
 	
-	static float bounceAngle = (glm::dot(m_ball->GetRigidBody()->GetCenterGlobal(), m_platform->GetCenterGlobal()) - 1500.f) / 2000.f;
+	static float bounceAngle = (glm::dot(m_ball->GetRigidBody()->GetCenterGlobal(), m_platform->GetCenterGlobal()) - 2000.f) / 2000.f;
 
 	if (m_isSphere)//If the sphere is active, let it move in a straight line until Y = 100, then do not render it anymore
 	{
 		if (m_verticalBounce)
-			m_spherePosY -= 1.f;
+			m_spherePosY -= 1.5f;
 		else
-			m_spherePosY += 1.f;
+			m_spherePosY += 1.5f;
 		
 		if (m_horizontalBounce)
 			m_spherePosX -= bounceAngle;
@@ -116,10 +116,10 @@ void Application::Update(void)
 		m_ball->SetModelMatrix(sphereModel);
 		m_ball->AddToRenderList();
 
-		if (m_spherePosY >= 200.f)
+		if (m_spherePosY >= 352.f)
 			m_verticalBounce = true;
 
-		if (m_spherePosX >= 335.f)
+		if (m_spherePosX >= 525.f)
 			m_horizontalBounce = false;
 		else if (m_spherePosX <= 0.f)
 			m_horizontalBounce = true;
@@ -145,6 +145,7 @@ void Application::Update(void)
 				{
 					m_pEntityMngr->RemoveEntity(i);
 					m_verticalBounce = !m_verticalBounce;
+					break;
 				}
 			//}
 			
@@ -160,7 +161,7 @@ void Application::ChangeBallDimention() {
 	{
 		m_ball->ClearDimensionSet();
 
-		for (int i = 0; i < m_uDimentionCount; i++)
+		for (uint i = 0; i < m_uDimentionCount; i++)
 		{
 			m_ball->AddDimension(i);
 
@@ -201,7 +202,7 @@ void Application::ChangeBallDimention() {
 void Simplex::Application::ToggleSpacial()
 {
 	if (m_bToggle){
-		for (int i = 0; i < m_pEntityMngr->GetEntityCount(); i++)
+		for (uint i = 0; i < m_pEntityMngr->GetEntityCount(); i++)
 		{
 			m_pEntityMngr->GetEntity(i)->ClearDimensionSet();
 			m_pEntityMngr->GetEntity(i)->AddDimension(0);
@@ -209,7 +210,7 @@ void Simplex::Application::ToggleSpacial()
 	}
 	else
 	{
-		for (int i = 0; i < m_pEntityMngr->GetEntityCount(); i++)
+		for (uint i = 0; i < m_pEntityMngr->GetEntityCount(); i++)
 		{
 			m_pEntityMngr->GetEntity(i)->ClearDimensionSet();
 			m_pEntityMngr->GetEntity(i)->AddDimension(m_vDimentions[i]);

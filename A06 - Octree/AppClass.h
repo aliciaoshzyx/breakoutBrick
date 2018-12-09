@@ -69,7 +69,7 @@ private:
 	//MyRigidBody* m_ball = nullptr;
 	MyEntity* m_ball = nullptr;
 
-	float m_playerMovement = 170.f;
+	float m_playerMovement = 255.f;
 
 	bool m_isSphere = false;
 	bool m_verticalBounce = false;

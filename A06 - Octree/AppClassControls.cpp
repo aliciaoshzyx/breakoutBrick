@@ -421,15 +421,15 @@ void Application::ProcessKeyboard(void)
 	{
 		m_playerMovement -= 1.25f;
 
-		if(m_playerMovement <= 20.f)
-			m_playerMovement = 20.f;
+		if(m_playerMovement <= 15.f)
+			m_playerMovement = 15.f;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
 		m_playerMovement += 1.25f;
 
-		if (m_playerMovement >= 315.f)
-			m_playerMovement = 315.f;
+		if (m_playerMovement >= 500.f)
+			m_playerMovement = 500.f;
 	}
 
 	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
