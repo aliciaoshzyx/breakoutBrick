@@ -418,3 +418,4 @@ bool Simplex::MyEntityManager::SharesDimension(String a_sUniqueID, MyEntity* con
 	}
 	return false;
 }
+

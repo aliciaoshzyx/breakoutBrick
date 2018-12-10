@@ -137,6 +137,17 @@ void Simplex::MyEntity::GenUniqueID(String& a_sUniqueID)
 	}
 	return;
 }
+
+bool Simplex::MyEntity::getHasBeenHit(void)
+{
+	return m_hasBeenHit;
+}
+
+void Simplex::MyEntity::setHasBeenHit(bool inputBool)
+{
+	m_hasBeenHit = inputBool;
+}
+
 void Simplex::MyEntity::AddDimension(uint a_uDimension)
 {
 	//we need to check that this dimension is not already allocated in the list

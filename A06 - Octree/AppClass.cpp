@@ -137,21 +137,43 @@ void Application::Update(void)
 			m_spherePosY = -35.f;
 		}
 
+		//Check if the ball is hitting with the brick, if it gets hit, set the brick's attribute of being hit by true
 		for (uint i = 0; i < m_pEntityMngr->GetEntityCount(); i++)
 		{
 			//if (m_ball->SharesDimension(m_pEntityMngr->GetEntity(i)))
 			//{
 				if (m_ball->GetRigidBody()->IsColliding(m_pEntityMngr->GetEntity(i)->GetRigidBody()))
 				{
-					m_pEntityMngr->RemoveEntity(i);
+					//set the ball directional attribute as well as the brick entity's hit attribute
+					m_pEntityMngr->GetEntity(i)->setHasBeenHit(true);
 					m_verticalBounce = !m_verticalBounce;
 					break;
 				}
 			//}
 			
-		}	
+		}
 	}
 	
+	//Decreases the brick's y coordinate if it has been hit by the ball once before
+	for (uint i = 0; i < m_pEntityMngr->GetEntityCount(); i++)
+	{
+		//getting the center coordinate and use it to translate the model matrix of the brick
+		vector3 temp = m_pEntityMngr->GetEntity(i)->GetRigidBody()->GetCenterGlobal();
+		matrix4 brickModel = glm::translate(IDENTITY_M4, vector3(temp.x, temp.y - 3.0f, temp.z));
+
+		if (m_pEntityMngr->GetEntity(i)->getHasBeenHit() == true)
+		{
+			//Update the model matrix of the brick
+			m_pEntityMngr->GetEntity(i)->SetModelMatrix(brickModel);
+		}
+
+		//If the brick reaches certain y coordinate, it gets deleted
+		if (temp.y <= -80.0f)
+		{
+			m_pEntityMngr->RemoveEntity(i);
+		}
+	}
+
 	m_v3PrevBall = m_ball->GetRigidBody()->GetCenterGlobal();
 
 }
