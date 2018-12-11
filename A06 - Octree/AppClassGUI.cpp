@@ -9,7 +9,7 @@ void Application::DrawGUI(void)
 	for (uint i = 0; i < nEmptyLines; ++i)
 		m_pMeshMngr->PrintLine("");//Add a line on top
 	//m_pMeshMngr->Print("						");
-	m_pMeshMngr->PrintLine("Milestone 3", C_YELLOW);
+	m_pMeshMngr->PrintLine("Final Deliverable", C_YELLOW);
 	//m_pMeshMngr->Print("						");
 
 	//m_pMeshMngr->Print("						");
@@ -44,7 +44,7 @@ void Application::DrawGUI(void)
 			ImGui::Text("   Spacebar: Release the ball\n");
 			ImGui::Text("   S: Turn on/off spatial optimization\n");
 			ImGui::Separator();
-			ImGui::TextColored(ImColor(255, 255, 0), "Milestone 3\n");
+			ImGui::TextColored(ImColor(255, 255, 0), "Final\n");
 		}
 		ImGui::End();
 	}

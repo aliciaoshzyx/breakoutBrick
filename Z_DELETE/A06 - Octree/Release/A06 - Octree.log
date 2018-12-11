@@ -1,27 +1,27 @@
-﻿  AppClass.cpp
+﻿  AppClassGUI.cpp
   Generating code
-  3 of 1392 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  1 of 1392 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  A06 - Octree.vcxproj -> C:\Users\Christopher\Source\Repos\breakoutBrick\Z_DELETE\A06 - Octree.exe
+  A06 - Octree.vcxproj -> C:\Users\amp80\Documents\DSA 2\breakoutBrick\Z_DELETE\A06 - Octree.exe
   Copying files...
           1 file(s) copied.
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Basic.fs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Basic.vs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Line.fs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Line.vs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Minimal.fs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Minimal.vs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Simplex.fs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Simplex.vs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Skybox.fs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Skybox.vs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Text.fs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Text.vs
-  C:\Users\Christopher\Source\Repos\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Basic-Instanced.vs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Basic.fs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Basic.vs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\BasicColor.fs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\BasicColor.vs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Line.fs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Line.vs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Minimal.fs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Minimal.vs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\MinimalRed.fs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Simplex.fs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Simplex.vs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Skybox.fs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Skybox.vs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Text.fs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Text.vs
+  C:\Users\amp80\Documents\DSA 2\breakoutBrick\include\Simplex\Shaders\Wireframe.fs
   17 File(s) copied
