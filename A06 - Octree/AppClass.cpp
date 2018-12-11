@@ -145,8 +145,13 @@ void Application::Update(void)
 				if (m_ball->GetRigidBody()->IsColliding(m_pEntityMngr->GetEntity(i)->GetRigidBody()))
 				{
 					//set the ball directional attribute as well as the brick entity's hit attribute
-					m_pEntityMngr->GetEntity(i)->setHasBeenHit(true);
-					m_verticalBounce = !m_verticalBounce;
+
+					if (m_pEntityMngr->GetEntity(i)->getHasBeenHit() == false)
+					{
+						m_pEntityMngr->GetEntity(i)->setHasBeenHit(true);
+						m_verticalBounce = !m_verticalBounce;
+					}
+					
 					break;
 				}
 			//}
